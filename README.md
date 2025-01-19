@@ -1,6 +1,8 @@
-# Flag Guesser
+# Flag Game
 
-Luis Benavides
+![home](./Home.png)  
+![game](./Game.png)
+![results](./Results.png)
 
 Ejecutar:
 ```bash
