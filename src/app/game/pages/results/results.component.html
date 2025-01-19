@@ -1,0 +1,45 @@
+<div
+    *ngIf="(!loaded); else stats"
+></div>
+
+<ng-template #stats>
+    <div class="col contenedor-centrado">
+        <div class="p-2 rounded-1 wrapper-tarjeta">
+            <div class="p-5 text-center tarjeta">
+                
+                <div class="pb-4">
+                    <h2>You Did It!</h2>
+                    <p class="pb-4">Rounds Gamemode</p>
+
+                        <div>
+                            <game-graph
+                                [hits]="hits"
+                                [misses]="misses"
+                            ></game-graph>
+                            <h3>Score: {{score}}</h3>
+                            <h3>Hi-Score: {{hi_score}}</h3>
+                            <h2 class="text-danger">{{recordMessage}}</h2>
+                        </div>
+
+                    <p>{{message}}</p>
+
+                </div>
+
+                <div class="d-flex flex-column gap-2">
+                    <button
+                        class="px-5"
+                        (click)="startRounds()"
+                        ><h2>Play Again!</h2>
+                    </button>
+
+                    <button
+                        class="px-5"
+                        (click)="navigateHome()"
+                        ><h2>Go Home</h2>
+                    </button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</ng-template>

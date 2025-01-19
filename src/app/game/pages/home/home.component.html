@@ -1,0 +1,68 @@
+<div class="col contenedor-centrado">
+    <div class="p-2 rounded-1 wrapper-tarjeta">
+        <div class="p-5 text-center tarjeta" style="background-image: url('https://pngimg.com/uploads/world_map/world_map_PNG28.png'); background-size: cover; background-position: center;">
+            
+            <h1 class="mb-5">FLAG GUESSER</h1>
+
+            
+            @if (roundsFlag) {
+                <div style="max-width: 500px; overflow-wrap: break-word;">
+                    <h3>How to play?</h3>
+                    <p>In this gamemode you will be given 10 seconds each round and you will play 10 rounds. Your statistics will be based on how many right or wrong choices and displayed on a graph.</p>
+                    <button
+                        class="px-5 mt-5"
+                        (click)="startRounds()"
+                        ><h2>Play Rounds!</h2>
+                    </button>
+                </div>
+            } 
+            @if (infiniteFlag) {
+                <div style="max-width: 500px; overflow-wrap: break-word;">
+                    <h3>How to play?</h3>
+                    <p>In this gamemode, you will keep playing round after round, but your streak will end the moment you make a wrong move. Each correct choice keeps you going, so you must think carefully! </p>
+                    <button
+                        class="px-5 mt-5"
+                        (click)="startInfinite()"
+                        ><h2>Play Infinite!</h2>
+                    </button>
+                </div>
+            } 
+            @if (timeFlag) {
+                <div style="max-width: 500px; overflow-wrap: break-word;">
+                    <h3>How to play?</h3>
+                    <p>In this gamemode you will be given 10 seconds each round and you will play 10 rounds, your score will be based on how long you took when answering each question.</p>
+                    <button
+                        class="px-5 mt-5"
+                        (click)="startTimeTrial()"
+                        ><h2>Play Time Trial!</h2>
+                    </button>
+                </div>
+            } 
+            @if (!infiniteFlag && !roundsFlag && !timeFlag) {
+                <div style="max-width: 500px; overflow-wrap: break-word;">
+                    <h3>Welcome!</h3>
+                    <p>Put your geography skills to the test! You'll see a random flag and four country names. Your challenge is to choose the correct country before time runs out. Try not to get confused between all the different flags!</p>
+                </div>
+            }
+
+            <div class="mt-5 d-flex flex-column gap-3 mx-5">
+                <button
+                    class="px-5"
+                    (click)="hoverRounds()"
+                    ><h2>Rounds Gamemode</h2>
+                </button>
+                <button
+                    class="px-5"
+                    (click)="hoverInfinite()"
+                    ><h2>Infinite Gamemode</h2>
+                </button>
+                <button
+                    class="px-5"
+                    (click)="hoverTimeTrial()"
+                    ><h2>Time Trial Gamemode</h2>
+                </button>
+            </div>
+        
+        </div>
+    </div>
+</div>

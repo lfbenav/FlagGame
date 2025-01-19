@@ -1,0 +1,49 @@
+.correct {
+    background-color: rgb(101, 184, 0);
+    color: white;    
+}
+
+.incorrect {
+    background-color: rgba(230, 0, 0, 0.853);  
+    color: white;            
+}
+
+.opcion {
+    font-size: calc(1.325rem + .9vw);
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.contenedor-botones {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px;
+}
+
+@media (max-width: 720px) {
+    .contenedor-botones {
+        grid-template-columns: 1fr;
+    }
+}
+
+.image-container {
+    display: flex; /* Para centrar contenido dentro del contenedor */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    max-width: 100%; /* Asegura que no se desborde horizontalmente */
+    height: auto; /* Se ajusta proporcionalmente */
+}
+
+.image-container img {
+    max-height: 192px; /* Altura máxima por defecto */
+    max-width: 100%; /* Nunca exceder el ancho del contenedor */
+    height: auto; /* Ajustar altura proporcionalmente */
+    width: auto; /* Mantener proporción */
+    object-fit: contain; /* Ajustar sin recortar contenido */
+    display: block; /* Evitar espacios blancos innecesarios */
+}

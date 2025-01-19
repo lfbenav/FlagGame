@@ -1,0 +1,22 @@
+<div class="container d-flex flex-column justify-content-center" style="height: 100vh;">    
+    <div class="p-2 rounded-1 wrapper-tarjeta">
+        <div class="px-5 pb-5 pt-5 text-center tarjeta">
+            
+            <game-stats
+                [score]="hits"
+                [misses]="misses"
+                [time]="timer"
+                [round]="round"
+            ></game-stats>
+            
+            <game-level
+                #level
+                [isLastRound]="lastRoundFlag"
+                (onStartRound)="onStartRound($event)"
+                (onScore)="onScore($event)"
+                (onEndLevel)="onEndLevel()"
+            ></game-level>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex flex-md-row flex-column justify-content-between text-start mb-3">
+    <div>
+        <h2>Round: {{round}}</h2>
+        <h2 [ngClass]="{
+            'text-warning': time > 3 && time <= 5, 
+            'text-danger': time <= 3
+            }">Time Left: {{time}}
+        </h2>
+    </div>
+    
+    @if (misses >= 0) {
+        <div>
+            <h2>Hits: {{score}}</h2>
+            <h2>Misses: {{misses}}</h2>
+        </div>
+    }@else{
+        <h2>Score: {{score}}</h2>
+    }
+</div>

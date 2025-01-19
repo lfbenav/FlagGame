@@ -1,0 +1,16 @@
+<div>
+    <div class="image-container">
+        <img class="rounded-3" [src]="opcionCorrecta?.flag" alt="Flag">
+    </div>
+
+    <h2 class="mt-4 fw-bold">Which country is this?</h2>
+
+    <div class="text-center mt-4 contenedor-botones">
+        @if (opciones.length === 4) {
+            <button #boton (click)="validateAnswer(opciones[0].name)" class="opcion">{{opciones[0].name || " "}}</button>
+            <button #boton (click)="validateAnswer(opciones[1].name)" class="opcion">{{opciones[1].name || " "}}</button>
+            <button #boton (click)="validateAnswer(opciones[2].name)" class="opcion">{{opciones[2].name || " "}}</button>
+            <button #boton (click)="validateAnswer(opciones[3].name)" class="opcion">{{opciones[3].name || " "}}</button>
+        }
+    </div>
+</div>
